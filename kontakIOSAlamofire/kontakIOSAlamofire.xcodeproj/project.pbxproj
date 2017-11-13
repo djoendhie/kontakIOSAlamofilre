@@ -17,6 +17,8 @@
 		D640B0E21FB94B7B0083AB7F /* kontakIOSAlamofireUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D640B0E11FB94B7B0083AB7F /* kontakIOSAlamofireUITests.swift */; };
 		D6F0E5431FB95403002756A0 /* kontakTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F0E5421FB95403002756A0 /* kontakTableViewCell.swift */; };
 		D6F0E5451FB95498002756A0 /* KontakTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F0E5441FB95498002756A0 /* KontakTableViewController.swift */; };
+		D6F0E5471FB97B42002756A0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F0E5461FB97B42002756A0 /* DetailViewController.swift */; };
+		D6F0E5491FB97B53002756A0 /* Kontak.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F0E5481FB97B53002756A0 /* Kontak.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		D640B0E31FB94B7B0083AB7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D6F0E5421FB95403002756A0 /* kontakTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kontakTableViewCell.swift; sourceTree = "<group>"; };
 		D6F0E5441FB95498002756A0 /* KontakTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KontakTableViewController.swift; sourceTree = "<group>"; };
+		D6F0E5461FB97B42002756A0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		D6F0E5481FB97B53002756A0 /* Kontak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kontak.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,8 @@
 				D640B0CD1FB94B7A0083AB7F /* Info.plist */,
 				D6F0E5421FB95403002756A0 /* kontakTableViewCell.swift */,
 				D6F0E5441FB95498002756A0 /* KontakTableViewController.swift */,
+				D6F0E5461FB97B42002756A0 /* DetailViewController.swift */,
+				D6F0E5481FB97B53002756A0 /* Kontak.swift */,
 			);
 			path = kontakIOSAlamofire;
 			sourceTree = "<group>";
@@ -350,6 +356,8 @@
 			files = (
 				D640B0C41FB94B7A0083AB7F /* ViewController.swift in Sources */,
 				D6F0E5451FB95498002756A0 /* KontakTableViewController.swift in Sources */,
+				D6F0E5471FB97B42002756A0 /* DetailViewController.swift in Sources */,
+				D6F0E5491FB97B53002756A0 /* Kontak.swift in Sources */,
 				D6F0E5431FB95403002756A0 /* kontakTableViewCell.swift in Sources */,
 				D640B0C21FB94B7A0083AB7F /* AppDelegate.swift in Sources */,
 			);

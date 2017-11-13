@@ -16,12 +16,20 @@ class KontakTableViewController: UITableViewController {
     
     var arrRes = [[String:AnyObject]]() //Array of dictionary
     
+    var idselected:String?
+    var nameSelected:String?
+    var emailSelected:String?
+    var genderSelected:String?
+    
+    let kontakURL = "http://api.androidhive.info/contacts/"
+
+    var kontak = [Kontak]()
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
         
-     //memanggil data jason menggunakan alamofire
+        //memanggil data jason menggunakan alamofire
         Alamofire.request("http://api.androidhive.info/contacts/").responseJSON { (responseData) -> Void in
             if((responseData.result.value) != nil) {
                 let swiftyJsonVar = JSON(responseData.result.value!)
@@ -35,80 +43,73 @@ class KontakTableViewController: UITableViewController {
             }
         }
     }
-
-override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-}
-
-// MARK: - Table view data source
-
-override func numberOfSections(in tableView: UITableView) -> Int {
-    // #warning Incomplete implementation, return the number of sections
-    return 1
-}
-
-override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    // #warning Incomplete implementation, return the number of rows
-    return arrRes.count
-}
-
-
- override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
- let cell = tableView.dequeueReusableCell(withIdentifier: "cellKontak", for: indexPath) as! kontakTableViewCell
     
-    var dict = arrRes[indexPath.row]
-    cell.labelNama.text = dict["name"] as? String
-    cell.labelEmail.text = dict["email"] as? String
- 
- 
- return cell
- }
- 
+    //mengambil data Dari API loans
 
-/*
- // Override to support conditional editing of the table view.
- override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
- // Return false if you do not want the specified item to be editable.
- return true
- }
- */
-
-/*
- // Override to support editing the table view.
- override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
- if editingStyle == .delete {
- // Delete the row from the data source
- tableView.deleteRows(at: [indexPath], with: .fade)
- } else if editingStyle == .insert {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
-
-/*
- // Override to support rearranging the table view.
- override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
- 
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
- // Return false if you do not want the item to be re-orderable.
- return true
- }
- */
-
-/*
- // MARK: - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
- // Get the new view controller using segue.destinationViewController.
- // Pass the selected object to the new view controller.
- }
- */
-
+    
+    //self sizingcell
+    //mengatur tinggi row table menjadi 92
+//    tableView.estimatedRowHeight = 92.0
+//    //mengatur tinggi row table menjadi dimensi otomatis
+//    tableView.rowHeight = UITableViewAutomaticDimension
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - Table view data source
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return arrRes.count
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellKontak", for: indexPath) as! kontakTableViewCell
+        
+        var dict = arrRes[indexPath.row]
+        cell.labelNama.text = dict["name"] as? String
+        cell.labelEmail.text = dict["email"] as? String
+        
+        
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        //mengecek data yang dikirim
+        print("Row \(indexPath.row)selected")
+        
+//        if let indexPath = self.tableView.indexPathForSelectedRow {
+//            let controller = segue.destination as! DetailViewController
+//            let value = arrRes[indexPath.row]
+//            controller.passname = value["name"] as! String
+//             controller.passid = value["id"] as! String
+//             controller.passemail = value["email"] as! String
+//             controller.passgender = value["gender"] as! String
+//        }
+        
+        //memamnggil segue passDataDetail
+        performSegue(withIdentifier: "PassData", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //mengecek apakah segue nya ada atau  tidak
+        if segue.identifier == "PassData"{
+            //kondisi ketika segue nya ada
+            //mengirimkan data ke detailViewController
+            let kirimData = segue.destination as! DetailViewController
+            //mengirimkan data ke masing2 variable
+            //mengirimkan nama wisata
+            kirimData.passid = idselected
+            kirimData.passname = nameSelected
+            kirimData.passemail = emailSelected
+            kirimData.passgender = genderSelected
+        }
+    }
 }
