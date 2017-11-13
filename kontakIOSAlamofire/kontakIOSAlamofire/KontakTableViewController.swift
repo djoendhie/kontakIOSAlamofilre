@@ -14,25 +14,28 @@ import SwiftyJSON
 
 class KontakTableViewController: UITableViewController {
     
+    var arrRes = [[String:AnyObject]]() //Array of dictionary
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
         
-        
-        //memanggil data jason menggunakan alamofire
-        Alamofire.request("http://api.androiddhive.info/contactws/").responseJSON(completionHandler: { (responseData) -> Void in
-            if((responseData.result.value != nil) {
-        let swiftyJSONVar = JSON(responData.result.value)
-        if let resData = swiftyJSONVar["contacts"].arrayObject { self.arrRes = resData as! [[String:AnyObject]]
-        }
-        if self.arrRes.count > 0 {
-            self.tableView.reloadData()
+     //memanggil data jason menggunakan alamofire
+        Alamofire.request("http://api.androidhive.info/contacts/").responseJSON { (responseData) -> Void in
+            if((responseData.result.value) != nil) {
+                let swiftyJsonVar = JSON(responseData.result.value!)
+                
+                if let resData = swiftyJsonVar["contacts"].arrayObject {
+                    self.arrRes = resData as! [[String:AnyObject]]
+                }
+                if self.arrRes.count > 0 {
+                    self.tableView.reloadData()
+                }
+            }
         }
     }
-}
 
-    }
 override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
@@ -42,23 +45,26 @@ override func didReceiveMemoryWarning() {
 
 override func numberOfSections(in tableView: UITableView) -> Int {
     // #warning Incomplete implementation, return the number of sections
-    return 0
+    return 1
 }
 
 override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     // #warning Incomplete implementation, return the number of rows
-    return 0
+    return arrRes.count
 }
 
-/*
+
  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
- let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+ let cell = tableView.dequeueReusableCell(withIdentifier: "cellKontak", for: indexPath) as! kontakTableViewCell
+    
+    var dict = arrRes[indexPath.row]
+    cell.labelNama.text = dict["name"] as? String
+    cell.labelEmail.text = dict["email"] as? String
  
- // Configure the cell...
  
  return cell
  }
- */
+ 
 
 /*
  // Override to support conditional editing of the table view.
