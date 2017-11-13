@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4EC72519FC6D5EA5F02C57B3 /* Pods_kontakIOSAlamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F2923B05007642307CEE2C3 /* Pods_kontakIOSAlamofire.framework */; };
 		D640B0C21FB94B7A0083AB7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D640B0C11FB94B7A0083AB7F /* AppDelegate.swift */; };
 		D640B0C41FB94B7A0083AB7F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D640B0C31FB94B7A0083AB7F /* ViewController.swift */; };
 		D640B0C71FB94B7A0083AB7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D640B0C51FB94B7A0083AB7F /* Main.storyboard */; };
@@ -34,6 +35,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F2923B05007642307CEE2C3 /* Pods_kontakIOSAlamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kontakIOSAlamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C01773102444E34D6D01973 /* Pods-kontakIOSAlamofire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kontakIOSAlamofire.release.xcconfig"; path = "Pods/Target Support Files/Pods-kontakIOSAlamofire/Pods-kontakIOSAlamofire.release.xcconfig"; sourceTree = "<group>"; };
+		95349CD4FF54A65AA6A5037A /* Pods-kontakIOSAlamofire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kontakIOSAlamofire.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kontakIOSAlamofire/Pods-kontakIOSAlamofire.debug.xcconfig"; sourceTree = "<group>"; };
 		D640B0BE1FB94B7A0083AB7F /* kontakIOSAlamofire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kontakIOSAlamofire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D640B0C11FB94B7A0083AB7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D640B0C31FB94B7A0083AB7F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EC72519FC6D5EA5F02C57B3 /* Pods_kontakIOSAlamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +79,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C57B5577B71DFD1CE1D02A0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				95349CD4FF54A65AA6A5037A /* Pods-kontakIOSAlamofire.debug.xcconfig */,
+				5C01773102444E34D6D01973 /* Pods-kontakIOSAlamofire.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A39609E06CF43E4D6AFA7D4F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0F2923B05007642307CEE2C3 /* Pods_kontakIOSAlamofire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D640B0B51FB94B7A0083AB7F = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +103,8 @@
 				D640B0D51FB94B7B0083AB7F /* kontakIOSAlamofireTests */,
 				D640B0E01FB94B7B0083AB7F /* kontakIOSAlamofireUITests */,
 				D640B0BF1FB94B7A0083AB7F /* Products */,
+				4C57B5577B71DFD1CE1D02A0 /* Pods */,
+				A39609E06CF43E4D6AFA7D4F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,9 +156,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D640B0E61FB94B7B0083AB7F /* Build configuration list for PBXNativeTarget "kontakIOSAlamofire" */;
 			buildPhases = (
+				FB6DA8D7B1AB6827AF22B366 /* [CP] Check Pods Manifest.lock */,
 				D640B0BA1FB94B7A0083AB7F /* Sources */,
 				D640B0BB1FB94B7A0083AB7F /* Frameworks */,
 				D640B0BC1FB94B7A0083AB7F /* Resources */,
+				B18446B406F393065CB9BA21 /* [CP] Embed Pods Frameworks */,
+				C41BBF1E7D2C746E1A38BC6B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -253,6 +280,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B18446B406F393065CB9BA21 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-kontakIOSAlamofire/Pods-kontakIOSAlamofire-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-kontakIOSAlamofire/Pods-kontakIOSAlamofire-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C41BBF1E7D2C746E1A38BC6B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-kontakIOSAlamofire/Pods-kontakIOSAlamofire-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB6DA8D7B1AB6827AF22B366 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-kontakIOSAlamofire-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D640B0BA1FB94B7A0083AB7F /* Sources */ = {
@@ -424,6 +507,7 @@
 		};
 		D640B0E71FB94B7B0083AB7F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95349CD4FF54A65AA6A5037A /* Pods-kontakIOSAlamofire.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -438,6 +522,7 @@
 		};
 		D640B0E81FB94B7B0083AB7F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C01773102444E34D6D01973 /* Pods-kontakIOSAlamofire.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
